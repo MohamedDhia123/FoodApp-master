@@ -1,0 +1,41 @@
+﻿@model FoodApp.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="container">
+    <div class="row shadow rounded">
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <div>
+                <img class="w-100 h-100" src="~/images/Garlic Butter Steak and Potatoes Skillet.jpg" />
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <form autocomplete="off" method="post" class="m-3 p-3">
+                <div class="mb-3">
+                    <h2 class="text-pink fst-italic">LogIn</h2>
+                    <span class="fst-italic text-muted">Login into your account</span>
+                </div>
+                <div class="mb-3">
+                    @Html.ValidationSummary()
+                </div>
+                <div class="form-floating mb-3">
+                    @Html.TextBoxFor(m => m.Email, new { @class="form-control", placeholder="Email"})
+                    <label for="Email">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    @Html.TextBoxFor(m => m.Password, new { @class="form-control", type="Password", placeholder="password"})
+                    <label for="Password">Password</label>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-sm btn-dark w-100 p-2 shadow rounded">LogIn</button>
+                </div>
+                <div class="mb-3">
+                    <span class="fst-italic text-muted">Don't have an account</span>
+                    <a class="text-dark text-decoration-none" asp-controller="Account" asp-action="Register">Register here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
